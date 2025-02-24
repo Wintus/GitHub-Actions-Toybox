@@ -72,7 +72,7 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - c
-    if: ${{ needs.c.result == 'success' }}
+    if: ${{ !failure() && needs.c.result == 'success' }}
     steps:
       - name: Show
         shell: bash
